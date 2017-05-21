@@ -12,7 +12,7 @@ var theBucketList = {
   start: [52.369385, 4.914318],
   end: [52.381070, 4.871317]
 }
-var foodAndChinese = {
+var foodAndFinesse = {
   start: [52.373891, 4.883762],
   end: [52.356072, 4.900242]
 }
@@ -25,8 +25,12 @@ var grafitti = {
   end: [52.356386, 4.910799]
 }
 
+var walks = [barhopping, theBucketList, foodAndFinesse, floraAndFauna, grafitti];
+
 // MAIN SCRIPTS
 function main() {
+
+  var $walkNumber = parseInt($('.map-section').attr('data-walknr'));
 
   map = new GMaps({
     div: '#map',
@@ -38,8 +42,8 @@ function main() {
   })
 
   map.getRoutes({
-    origin: barhopping.start,
-    destination: barhopping.end,
+    origin: walks[$walkNumber].start,
+    destination: walks[$walkNumber].end,
     travelMode: 'walking',
     callback: function(e){
       route = new GMaps.Route({

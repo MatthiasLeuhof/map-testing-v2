@@ -1,1 +1,55 @@
-<!-- content -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <link href="../css/style.css" rel="stylesheet">
+  <title>Barhopping · Urban Walks</title>
+</head>
+<body>
+
+  <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="../index.html">UW</a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="../walks.html">Walks</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../map.html">Map</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <h1>Map</h1>
+
+    <div id="map" class="map-section" data-walknr="0">
+
+    </div>
+
+    <button type="button" name="start" id="start">start</button>
+    <button type="button" name="previous" id="previous-stop">previous stop</button>
+    <button type="button" name="next" id="next-stop">next stop</button>
+
+    <ul id="instructions">
+
+    </ul>
+
+  </div>
+
+  <script src="../js/jquery-3.2.1.min.js"></script>
+  <script src="../js/tether.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQqbqGZUBTFd7rMKMhx0QVWPA-yoYTssk"></script>
+  <script src="../js/gmaps.js"></script>
+  <script src="../js/scripts.js"></script>
+</body>
+</html>
