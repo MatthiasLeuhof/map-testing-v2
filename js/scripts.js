@@ -56,18 +56,24 @@ function main() {
     e.preventDefault();
     route.forward();
 
-    console.log(route);
-
-    if(route.step_count < route.steps_length)
+    if(route.step_count < route.steps_length) {
       $('#instructions').append('<li>'+route.steps[route.step_count].instructions+'</li>');
+      map.setCenter(route.steps[route.step_count].start_location.lat(), route.steps[route.step_count].start_location.lng());
+      map.setZoom(17);
+    }
   });
 
   $('#previous-stop').click(function(e){
     e.preventDefault();
     route.back();
 
-    if(route.step_count >= 0)
+
+    if(route.step_count >= 0) {
       $('#instructions').find('li').last().remove();
+      map.setCenter(route.steps[route.step_count].start_location.lat(), route.steps[route.step_count].start_location.lng());
+      map.setZoom(17);
+    }
+
   });
 
 }
