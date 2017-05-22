@@ -54,3 +54,8 @@ $(document).ready(function(){
     }
   });
 });
+
+
+
+// Old 'Pan to' way of thinking
+map.setCenter(route.steps[route.step_count].start_location.lat(), route.steps[route.step_count].start_location.lng());
