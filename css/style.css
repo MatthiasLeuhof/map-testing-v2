@@ -1,19 +1,23 @@
 /*my styles*/
 
 #map {
-  height: 80vh;
+  height: 50vh;
   width: 100%;
 }
+
+/*MAIN STYLES*/
 
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
-  font-family: "rift";
+  font-family: "rift", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 600;
   text-transform: uppercase;
 }
+
+/*HEADER STYLES*/
 
 .bg-transparent {
   background-color: transparent;
@@ -21,6 +25,13 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 
 .menu-icon {
   border: none;
+}
+
+/*TRAIL LIST STYLES*/
+
+.trail-list {
+  padding: 0;
+  list-style-type: none;
 }
 
 .walk-link {
@@ -72,3 +83,5 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+/*TRAIL DETAIL STYLES*/
