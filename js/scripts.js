@@ -1,5 +1,5 @@
 
-// VARIABLES
+// VARIABLES FOR MAP
 var directionsService;
 var directionsDisplay;
 var map;
@@ -13,8 +13,7 @@ var nextStop = document.getElementById('next-stop');
 var previousStop = document.getElementById('previous-stop');
 var currentLeg = 0;
 
-// WALKS
-
+// VARIABLES FOR WALKS
 var theBucketList = {
   start: [52.369385, 4.914318],
   end: [52.381070, 4.871317]
@@ -76,7 +75,9 @@ for (var i = 1; i < (stops.length - 1); i++) {
   });
 }
 
+// VARIABLES FOR PANELS
 
+$panels = $('.panel');
 
 // MAIN SCRIPTS
 function initMap() {
@@ -169,6 +170,7 @@ function calculateRoute() {
 
 function forward(e) {
   e.preventDefault();
+
   var request = {
     origin: walks[$walkNumber].start,
     destination: walks[$walkNumber].end,
@@ -201,14 +203,18 @@ function forward(e) {
         }
 
         currentLeg += 1;
+        // console.log(currentLeg);
+        var id = $panels[currentLeg];
+
         console.log(currentLeg);
-        console.log(stops.length)
+        $panels.filter(':not([hidden])').attr('hidden', true);
+        $(id).removeAttr('hidden');
 
         polyline.setMap(map);
         polylines.push(polyline);
         map.fitBounds(bounds);
 
-        console.log(polylines);
+        // console.log(polylines);
       }
 
 
@@ -216,12 +222,70 @@ function forward(e) {
       window.alert('Directions request failed due to ' + status);
     }
   });
+
+  // var id = $panels[currentLeg];
+  //
+  // console.log(currentLeg);
+  // $panels.filter(':not([hidden])').attr('hidden', true);
+  // $(id).removeAttr('hidden');
 }
 
 function back(e) {
   e.preventDefault();
-  var removePolyline = polylines[currentLeg - 1];
-  removePolyline.setMap(null);
-  polylines.pop(removePolyline);
-  currentLeg -= 1;
+
+
+  var request = {
+    origin: walks[$walkNumber].start,
+    destination: walks[$walkNumber].end,
+    waypoints: waypts,
+    optimizeWaypoints: false,
+    travelMode: 'WALKING'
+  };
+
+  if (currentLeg > 1) {
+    var removePolyline = polylines[currentLeg - 1];
+    removePolyline.setMap(null);
+    polylines.pop(removePolyline);
+  }
+
+  directionsService.route(request, function(response, status) {
+    if (status === 'OK') {
+
+      if (currentLeg < stops.length && currentLeg > 1) {
+        var bounds = new google.maps.LatLngBounds();
+
+        var legs = response.routes[0].legs;
+
+        var steps = legs[currentLeg - 2].steps;
+        for (j = 0; j < steps.length; j++) {
+          var nextSegment = steps[j].path;
+          for (k = 0; k < nextSegment.length; k++) {
+            bounds.extend(nextSegment[k]);
+          }
+        }
+
+        currentLeg -= 1;
+        console.log(currentLeg);
+        var id = $panels[currentLeg];
+
+        console.log(currentLeg);
+        $panels.filter(':not([hidden])').attr('hidden', true);
+        $(id).removeAttr('hidden');
+
+        map.fitBounds(bounds);
+
+        // console.log(polylines);
+      }
+
+
+    } else {
+      window.alert('Directions request failed due to ' + status);
+    }
+  });
+
+  // var id = $panels[currentLeg];
+  //
+  // console.log(currentLeg);
+  // $panels.filter(':not([hidden])').attr('hidden', true);
+  // $(id).removeAttr('hidden');
 }
