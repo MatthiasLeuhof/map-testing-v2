@@ -85,3 +85,91 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 }
 
 /*TRAIL DETAIL STYLES*/
+
+.back-link-area {
+  height: 80px;
+}
+
+.back-link {
+  border: 3px solid white;
+  border-radius: 100px;
+  width: 50px;
+  height: 50px;
+  background-color: #4990E2;
+  position: relative;
+  top: 15px;
+  left: 15px;
+}
+
+.start-trail-link-area {
+  height: 20vh;
+}
+
+.start-trail-link {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  display: block;
+}
+
+.start-trail-link-div {
+  width: 80%;
+  height: 50px;
+  background-color: #4990E2;
+  position: relative;
+  border-radius: 100px;
+  border: 3px solid white;
+  left: 10%;
+}
+
+.start-trail-link-p {
+  line-height: 44px;
+  height: 44px;
+}
+
+.trail-hero {
+  position: relative;
+  height: 70vh;
+  margin-bottom: 1rem;
+}
+
+.trail-hero-title {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.trail-hero-title-h1 {
+  border-bottom: 3px solid white;
+  border-top: 3px solid white;
+  line-height: 55px;
+  display: inline-block;
+}
+
+.trail-hero-elements {
+  position: absolute;
+  bottom: 25px;
+  left: 0;
+  height: 75px;
+  background-color:
+  transparent;
+  width: 100%;
+}
+
+.trail-hero-elements-row {
+  padding: 0 15px;
+}
+
+.trail-hero-elements-top {
+  width: 50px;
+  height: 50px;
+  border: 3px solid white;
+  border-radius: 100px;
+  display: inline-block;
+  margin-bottom: .5rem;
+}
+
+.trail-hero-elements-in {
+  height: 44px;
+  line-height: 44px;
+}
