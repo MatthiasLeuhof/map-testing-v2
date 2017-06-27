@@ -9,7 +9,62 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   font-family: "rift";
-  font-weight: 300;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.bg-transparent {
+  background-color: transparent;
+}
+
+.walk-link {
+  height: 200px;
+}
+
+.walk-link-border {
+  background-color: transparent;
+  border: 5px solid white;
+  position: relative;
+  height: 180px;
+  top: 10px;
+  margin: 0 10px;
+}
+
+.walk-link-title {
+  color: white;
+  text-align: center;
+  height: 170px;
+  line-height: 170px;
+}
+
+.barhopping {
+  background: linear-gradient(to right bottom, rgba(74, 144, 226, 0.5), rgba(74, 144, 226, 0.5)), url(../assets/images/barhopping.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.flora-and-fauna {
+  background: linear-gradient(to right bottom, rgba(208, 2, 27, 0.5), rgba(208, 2, 27, 0.5)), url(../assets/images/flora-and-fauna.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.food-and-finesse {
+  background: linear-gradient(to right bottom, rgba(245, 166, 35, 0.5), rgba(245, 166, 35, 0.5)), url(../assets/images/food-and-finesse.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.grafitti {
+  background: linear-gradient(to right bottom, rgba(144, 19, 254, 0.5), rgba(144, 19, 254, 0.5)), url(../assets/images/grafitti.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bucketlist {
+  background: linear-gradient(to right bottom, rgba(65, 117, 5, 0.5), rgba(65, 117, 5, 0.5)), url(../assets/images/bucketlist.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }

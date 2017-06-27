@@ -9,13 +9,13 @@
   <link href="css/style.css" rel="stylesheet">
   <title>Walks · Urban Walks</title>
 </head>
-<body>
+<body class="bg-inverse text-white">
 
-  <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <nav class="navbar navbar-toggleable-md navbar-inverse bg-transparent">
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" href="index.html">UW</a>
+    <a class="navbar-brand h3" href="index.html">SITJ</a>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
@@ -31,16 +31,49 @@
 
   <div class="container">
 
-    <h1>Walks</h1>
+    <h1 class="text-center">Trails</h1>
 
-    <ul>
-      <li><a href="walks/the-bucket-list.html">The Bucket List</a></li>
-      <li><a href="walks/barhopping.html">Barhopping</a></li>
-      <li><a href="walks/flora-and-fauna.html">Flora and Fauna</a></li>
-      <li><a href="walks/food-and-finesse.html">Food and Finesse</a></li>
-      <li><a href="walks/grafitti.html">Grafitti</a></li>
+  </div>
+
+  <div class="trail-list text-white">
+    <ul style="padding: 0; list-style-type: none;">
+      <li><a href="walks/barhopping.html">
+        <div class="walk-link barhopping">
+          <!-- <img src="assets/images/barhopping.jpg" style="width: 100%; height:100%; object-fit: cover; overflow: hidden; position: relative;" alt=""> -->
+          <div class="walk-link-border">
+            <h2 class="walk-link-title">Barhopping</h2>
+          </div>
+        </div>
+      </a></li>
+      <li><a href="walks/flora-and-fauna.html">
+        <div class="bg-warning walk-link flora-and-fauna">
+          <div class="walk-link-border">
+            <h2 class="walk-link-title">Flora &amp; Fauna</h2>
+          </div>
+        </div>
+      </a></li>
+      <li><a href="walks/food-and-finesse.html">
+        <div class="bg-primary walk-link food-and-finesse">
+          <div class="walk-link-border">
+            <h2 class="walk-link-title">Food &amp; Finesse</h2>
+          </div>
+        </div>
+      </a></li>
+      <li><a href="walks/grafitti.html">
+        <div class="bg-warning walk-link grafitti">
+          <div class="walk-link-border">
+            <h2 class="walk-link-title">Grafitti</h2>
+          </div>
+        </div>
+      </a></li>
+      <li><a href="walks/the-bucket-list.html">
+        <div class="bg-primary walk-link bucketlist">
+          <div class="walk-link-border">
+            <h2 class="walk-link-title">The Bucketlist</h2>
+          </div>
+        </div>
+      </a></li>
     </ul>
-
   </div>
 
   <script src="js/jquery-3.2.1.min.js"></script>
