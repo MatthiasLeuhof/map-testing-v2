@@ -31,11 +31,21 @@
 
   <div class="container">
 
-    <h1>Map</h1>
+    <h1 class="text-center h6">Food &amp; Finesse</h1>
 
-    <div id="map" class="map-section" data-walknr="2">
+  </div>
+
+  <div id="map" class="map-section" data-walknr="2"></div>
+
+  <div class="container instructions-container" id="instructions-section">
+    <img class="instructions-icon" src="../assets/images/walking-icon.svg" alt="Icon of a man walking">
+    <h2 class="h5 text-center">Get to the next stop</h2>
+    <div id="instructions">
 
     </div>
+  </div>
+
+  <div class="container">
 
     <div class="tab-panels">
       <div class="panel" id="stop-1">
@@ -74,12 +84,20 @@
       </div>
     </div>
 
-    <button type="button" class="btn btn-primary" name="previous" id="previous-stop">previous stop</button>
-    <button type="button" class="btn btn-primary" name="next" id="next-stop">next stop</button>
+    <div class="buttons">
+      <div class="text-center">
+        <button type="button" class="btn next-btn h5 color-white" name="next" id="next-stop">next stop</button>
+      </div>
+      <div class="text-center">
+        <a href="food-and-finesse-complete.html" id="complete-trail" hidden>
+          <span class="complete-btn h5">Complete Trail</span>
+        </a>
+      </div>
+      <div class="text-center">
+        <button type="button" class="btn previous-btn h5 color-white" name="previous" id="previous-stop">previous stop</button>
+      </div>
+    </div>
 
-    <ul id="instructions" hidden>
-
-    </ul>
 
   </div>
 
@@ -88,6 +106,5 @@
   <script src="../js/bootstrap.min.js"></script>
   <script src="../js/scripts.js"></script>
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQqbqGZUBTFd7rMKMhx0QVWPA-yoYTssk&callback=initMap"></script>
-  <!-- <script src="../js/gmaps.js"></script> -->
 </body>
 </html>

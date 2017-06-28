@@ -31,64 +31,80 @@
 
   <div class="container">
 
-    <h1 class="text-center">Barhopping</h1>
+    <h1 class="text-center h6">Barhopping</h1>
 
   </div>
 
   <div id="map" class="map-section" data-walknr="0"></div>
 
+  <div class="container instructions-container" id="instructions-section">
+    <img class="instructions-icon" src="../assets/images/walking-icon.svg" alt="Icon of a man walking">
+    <h2 class="h5 text-center">Get to the next stop</h2>
+    <div id="instructions">
+
+    </div>
+  </div>
+
   <div class="container">
 
     <div class="tab-panels">
       <div class="panel" id="stop-1">
-        <h2>Stop 1: Walter’s - The Walter Woodbury Bar</h2>
+        <h2>Walter’s - The Walter Woodbury Bar</h2>
         <p>Located in the charming Indische Buurt neighbourhood, Walter’s is the place for a perfect jungle ambience. Dark wooden counters and warm green plants make you feel at home and adventurous at the same time.</p>
       </div>
       <div class="panel" id="stop-2" hidden>
-        <h2>Stop 2: Bar Botanique</h2>
+        <h2>Bar Botanique</h2>
         <p>Ever wonder how far away paradise is? Bar Botanique is located at Muiderpoort station and will bring you into a true paradise with both Dutch specialties (like bitterballen), international snacks (like German sausages) and truly amazing slushy tropical drinks.</p>
       </div>
       <div class="panel" id="stop-3" hidden>
-        <h2>Stop 3: Louie Louie</h2>
+        <h2>Louie Louie</h2>
         <p>Louie Louie is an all-day-café in Amsterdam Oost. Here you can indulge in South American-inspired cuisine around the clock. The place offers a spacious bar, some tables, and a great terrace with a beautiful view on the Tropenmuseum. During night time, it is usually crowded. Maybe also because of the delicious Sangria Pitcher you can share with friends…</p>
       </div>
       <div class="panel" id="stop-4" hidden>
-        <h2>Stop 4: De Biertuin</h2>
+        <h2>De Biertuin</h2>
         <p>The Beer Garden is in the Linnaeusstraat opposite the Oosterpark. Aside from the impressive selection of tap and bottled beer on offer, you should head along for lunch or dinner – the latter including their famous chicken roasted on a spit.</p>
       </div>
       <div class="panel" id="stop-5" hidden>
-        <h2>Stop 5: Caffe Milo</h2>
+        <h2>Caffe Milo</h2>
         <p>Caffe Milo is at the corner of Oosterpark. You can’t miss the hip building with a very nice terrace in front. The small menu offers Italian food and drink classics. Known for its life music, Caffe Milo is a must during your stay. If not just to mingle with the in crowd of East Amsterdam.</p>
       </div>
       <div class="panel" id="stop-6" hidden>
-        <h2>Stop 6: Bar Bukowski</h2>
+        <h2>Bar Bukowski</h2>
         <p>Bar Bukowski is the highlight for every visitor in Amsterdam Oost. The location could not be better: across the Oosterpark and next to the Beukenplein. This students’ Mecca offers coffee, beer, and liquor around the clock. Their parties are famous. But they also offer poetry slams, bar stool theatres and comedy nights.</p>
       </div>
       <div class="panel" id="stop-7" hidden>
-        <h2>Stop 7: Smokin’ Barrels</h2>
+        <h2>Smokin’ Barrels</h2>
         <p>This place claims to have the best burgers in Amsterdam. Smokin’ Barrels is a foodie’s heaven. Good lobster, surf and turf. The outside terrace is covered – so even in the rain you can eat outside. If you're in the mood for comfort food or a fun night out with friends, come here and share a big plate of food!</p>
       </div>
       <div class="panel" id="stop-8" hidden>
-        <h2>Stop 8: Bar Mowgli</h2>
+        <h2>Bar Mowgli</h2>
         <p>When you go to Bar Mowgli, you find yourself in midst an urban version of The Jungle Book. The fun restaurant is a nice place to sit, drink and relax on hot spot Beukenplein. Not too expensive Asian fusion food is served. Funky staff and colourful, friendly crowds await you.</p>
       </div>
     </div>
 
-    <button type="button" class="btn btn-primary" name="previous" id="previous-stop">previous stop</button>
-    <button type="button" class="btn btn-primary" name="next" id="next-stop">next stop</button>
-
-    <div id="instructions" hidden>
-
+    <div class="buttons">
+      <div class="text-center">
+        <button type="button" class="btn next-btn h5 color-white" name="next" id="next-stop">next stop</button>
+      </div>
+      <div class="text-center">
+        <a href="barhopping-complete.html" id="complete-trail" hidden>
+          <span class="complete-btn h5">Complete Trail</span>
+        </a>
+      </div>
+      <div class="text-center">
+        <button type="button" class="btn previous-btn h5 color-white" name="previous" id="previous-stop">previous stop</button>
+      </div>
     </div>
+
+
 
   </div>
 
   <script src="../js/jquery-3.2.1.min.js"></script>
   <script src="../js/tether.min.js"></script>
   <script src="../js/bootstrap.min.js"></script>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQqbqGZUBTFd7rMKMhx0QVWPA-yoYTssk&callback=initMap"></script>
   <script src="../js/scripts.js"></script>
-  <!-- <script src="../js/gmaps.js"></script> -->
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQqbqGZUBTFd7rMKMhx0QVWPA-yoYTssk&callback=initMap"></script>
 
 </body>
 </html>

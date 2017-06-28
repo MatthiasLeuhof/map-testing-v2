@@ -31,56 +31,78 @@
 
   <div class="container">
 
-    <h1>Map</h1>
+    <h1 class="text-center h6">Grafitti</h1>
 
-    <div id="map" class="map-section" data-walknr="4">
+  </div>
+
+  <div id="map" class="map-section" data-walknr="4"></div>
+
+  <div class="container instructions-container" id="instructions-section">
+    <img class="instructions-icon" src="../assets/images/walking-icon.svg" alt="Icon of a man walking">
+    <h2 class="h5 text-center">Get to the next stop</h2>
+    <div id="instructions">
 
     </div>
+  </div>
+
+  <div class="container">
 
     <div class="tab-panels">
       <div class="panel" id="stop-1">
-        <h2>Stop 1: 24 Flower</h2>
-        <p>Stepping off the ferry, the first thing you see is the flower shop ‘ 24 Flower’ . The flowers are delivered to the shop directly from the nearby greenhouses. Maybe you have already gotten accustomed with FEBO, the magic place where you get your food from a machine in the wall. 24 Flower is the FEBO for flowers. You can purchase flowers 24/7, even when the shop is closed.</p>
+        <h2>Stop 1: Central Station</h2>
+        <p>Stepping off the ferry, the first thing you see is the flower shop ‘24 Flower’ . The flowers are delivered to the shop directly from the nearby greenhouses. Maybe you have already gotten accustomed with FEBO, the magic place where you get your food from a machine in the wall. 24 Flower is the FEBO for flowers. You can purchase flowers 24/7, even when the shop is closed.</p>
       </div>
       <div class="panel" id="stop-2" hidden>
-        <h2>Stop 2: Vous Etes Ici – Art Gallery</h2>
+        <h2>Stop 2: 24 Flower</h2>
+        <p>Stepping off the ferry, the first thing you see is the flower shop ‘24 Flower’ . The flowers are delivered to the shop directly from the nearby greenhouses. Maybe you have already gotten accustomed with FEBO, the magic place where you get your food from a machine in the wall. 24 Flower is the FEBO for flowers. You can purchase flowers 24/7, even when the shop is closed.</p>
+      </div>
+      <div class="panel" id="stop-3" hidden>
+        <h2>Stop 3: Vous Etes Ici – Art Gallery</h2>
         <p>This gallery was founded in 1990 by Francis Boeske en Hans Gieles. Here you can find three different exhibitions of different artists from The Netherlands, England, America, and Switzerland. Next to the gallery you can find The Guesthouse. Every time a guest stays at The Guesthouse, they get the chance to decorate the room to their own taste.</p>
         <h3>Other Artists</h3>
         <p>There are lots of other artists that work at NDSM. Their work spaces and studios spread out over the yard. You can visit some of the artists.</p>
       </div>
-      <div class="panel" id="stop-3" hidden>
-        <h2>Stop 3: Plekk — Restaurant</h2>
+      <div class="panel" id="stop-4" hidden>
+        <h2>Stop 4: Plekk — Restaurant</h2>
         <p>This restaurant is almost a graffiti artwork on its own. It is built out of different ship containers. The inside is covered with graffiti and artwork. There is a beach next to the restaurant and it almost feels as if you are on a small island if still close to the large and busy city of Amsterdam.</p>
         <h3>Abandoned trains and busses</h3>
         <p>Walking around the NDSM shipyard you will spot some interesting sights. The abandoned trains and busses is definitely one of these. These abandoned pieces of public transport have been turned into real pieces of art. Explore them on your way through the NDSM.</p>
       </div>
-      <div class="panel" id="stop-4" hidden>
-        <h2>Stop 4: Crane Hotel Amsterdam</h2>
+      <div class="panel" id="stop-5" hidden>
+        <h2>Stop 5: Crane Hotel Amsterdam</h2>
         <p>The Crane Hotel is one of the most interesting (and most expensive) hotels in Amsterdam. It has three suites and a panoramic lounge. The prices start at €750. Not exactly affordable for the average student however, still very nice to see. The crane still moves in the wind.</p>
       </div>
-      <div class="panel" id="stop-5" hidden>
-        <h2>Stop 5: Noorderlicht – Café and Restaurant</h2>
+      <div class="panel" id="stop-6" hidden>
+        <h2>Stop 6: Noorderlicht – Café and Restaurant</h2>
         <p>If you ask us, Noorderlicht Café is one of the most beautiful places in Amsterdam where you can enjoy a cup of coffee and some delicious food. The café is known for the casual atmosphere and organises a lot of events.</p>
       </div>
-      <div class="panel" id="stop-6" hidden>
-        <h2>Stop 6: NDSM Warehouses</h2>
+      <div class="panel" id="stop-7" hidden>
+        <h2>Stop 7: NDSM Warehouses</h2>
         <p>Many a famous artists such as Zedz, Angel, Lunar, Tak and Loomit have visited the yards at NDSM. It is basically one big hall of fame for street artists. NDSM personifies freedom, defiance and the unconventional attitude of artists, which makes it a very special place.</p>
         <p>There are three different parts to the shipyard. The shipyard itself, the lasloods, and the timmerloods. Once a month one of the biggest flea markets in Europe is held at the shipyards.</p>
       </div>
-      <div class="panel" id="stop-7" hidden>
-        <h2>Stop 7: IJkantine</h2>
+      <div class="panel" id="stop-8" hidden>
+        <h2>Stop 8: IJkantine</h2>
         <p>The IJ-kantine is a place where you can go for a coffee, breakfast, lunch, and dinner. It is located facing the south, so you have lots of sun there. You can enjoy the beautiful view of the port of Amsterdam.</p>
         <h3>TIP — Street Art Museum</h3>
         <p>Did you know that the Street Art Museum has its own tours? The tours are very informative and they have over 50 artworks on display. In the summer of 2018 a new street art museum will open; it will be the largest of its kind in the world.</p>
       </div>
     </div>
 
-    <button type="button" class="btn btn-primary" name="previous" id="previous-stop">previous stop</button>
-    <button type="button" class="btn btn-primary" name="next" id="next-stop">next stop</button>
+    <div class="buttons">
+      <div class="text-center">
+        <button type="button" class="btn next-btn h5 color-white" name="next" id="next-stop">next stop</button>
+      </div>
+      <div class="text-center">
+        <a href="grafitti-complete.html" id="complete-trail" hidden>
+          <span class="complete-btn h5">Complete Trail</span>
+        </a>
+      </div>
+      <div class="text-center">
+        <button type="button" class="btn previous-btn h5 color-white" name="previous" id="previous-stop">previous stop</button>
+      </div>
+    </div>
 
-    <ul id="instructions" hidden>
-
-    </ul>
 
   </div>
 
@@ -89,6 +111,5 @@
   <script src="../js/bootstrap.min.js"></script>
   <script src="../js/scripts.js"></script>
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQqbqGZUBTFd7rMKMhx0QVWPA-yoYTssk&callback=initMap"></script>
-  <!-- <script src="../js/gmaps.js"></script> -->
 </body>
 </html>

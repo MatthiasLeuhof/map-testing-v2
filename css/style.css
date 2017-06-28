@@ -3,6 +3,7 @@
 #map {
   height: 50vh;
   width: 100%;
+  margin-bottom: 60px;
 }
 
 /*MAIN STYLES*/
@@ -172,4 +173,65 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 .trail-hero-elements-in {
   height: 44px;
   line-height: 44px;
+}
+
+/*TRAIL STYLES*/
+
+.instructions-container {
+  background-color: #484C4E;
+  padding-top: 50px;
+  padding-bottom: 40px;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.instructions-icon {
+  height: 60px;
+  width: 60px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+.panel h2 {
+  text-align: center;
+}
+
+.tab-panels {
+  margin-bottom: 44px;
+}
+
+.buttons {
+  margin-bottom: 44px;
+}
+
+.next-btn {
+  border-radius: 100px;
+  width: 250px;
+  height: 50px;
+  border: 3px solid white;
+  background-color: #4990E2;
+}
+
+.previous-btn {
+  border: none;
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.complete-btn {
+  border-radius: 100px;
+  width: 250px;
+  height: 50px;
+  border: 3px solid white;
+  background-color: #4990E2;
+  display: inline-block;
+  line-height: 44px;
+  color: white;
+}
+
+
+.trail-slide {
+  width: 100%;
 }

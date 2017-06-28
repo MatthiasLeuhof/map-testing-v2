@@ -7,10 +7,13 @@ var route;
 var marker;
 var markerArray = [];
 var polylines = [];
+var instructionsArray = [];
 var $walkNumber = parseInt($('.map-section').attr('data-walknr'));
+var $instructionsSection = $('#instructions-section');
 var $instructionsContainer = document.getElementById('instructions');
 var nextStop = document.getElementById('next-stop');
 var previousStop = document.getElementById('previous-stop');
+var completeTrail = document.getElementById('complete-trail');
 var currentLeg = 0;
 
 // VARIABLES FOR WALKS
@@ -293,9 +296,11 @@ function calculateRoute() {
     travelMode: 'WALKING'
   };
 
+  instructionsArray = [];
+  markerArray = [];
+
   directionsService.route(request, function(response, status) {
     if (status === 'OK') {
-      // directionsDisplay.setDirections(response);
 
       var polyline = new google.maps.Polyline({
         path: [],
@@ -309,7 +314,8 @@ function calculateRoute() {
       var legs = response.routes[0].legs;
       for (i = 0; i < legs.length; i++) {
         var steps = legs[i].steps;
-        $instructionsContainer.innerHTML += '<b>Step ' + (i + 1) + ': </b>';
+        var instrLeg = document.createElement('div');
+        instructionsArray.push(instrLeg);
         // Check if it's the last step of the walk, then add one at the end of it, if not, only at the start
         if (i == (legs.length - 1)) {
           var marker = new google.maps.Marker({
@@ -330,22 +336,26 @@ function calculateRoute() {
           markerArray.push(marker);
         }
 
-        for (l = 0; l < steps.length; l++) {
-          var instr = steps[l].instructions;
-          $instructionsContainer.innerHTML += instr + '<br>';
-        }
         for (j = 0; j < steps.length; j++) {
           var nextSegment = steps[j].path;
+          var instr = steps[j].instructions;
+          instructionsArray[i].innerHTML += instr;
           for (k = 0; k < nextSegment.length; k++) {
             polyline.getPath().push(nextSegment[k]);
             bounds.extend(nextSegment[k]);
           }
         }
       }
-
-      // console.log(response.routes[0].legs);
-      // console.log($instructionsContainer.innerHTML);
       console.log(markerArray);
+      console.log(instructionsArray);
+
+      if (currentLeg == 0) {
+        $instructionsSection.attr('hidden', true);
+        previousStop.setAttribute('hidden', true);
+      } else {
+        $instructionsSection.removeAttr('hidden');
+        previousStop.removeAttribute('hidden');
+      }
 
       polyline.setMap(map);
       map.fitBounds(bounds);
@@ -390,31 +400,33 @@ function forward(e) {
         }
 
         currentLeg += 1;
-        // console.log(currentLeg);
+
         var id = $panels[currentLeg];
 
         console.log(currentLeg);
         $panels.filter(':not([hidden])').attr('hidden', true);
         $(id).removeAttr('hidden');
 
+        $instructionsSection.removeAttr('hidden');
+        previousStop.removeAttribute('hidden');
+
+        if (currentLeg == stops.length - 1) {
+          nextStop.setAttribute('hidden', true);
+          completeTrail.removeAttribute('hidden');
+        }
+
+        $instructionsContainer.innerHTML = '';
+        $instructionsContainer.appendChild(instructionsArray[currentLeg - 1]);
+
         polyline.setMap(map);
         polylines.push(polyline);
         map.fitBounds(bounds);
 
-        // console.log(polylines);
       }
-
-
     } else {
       window.alert('Directions request failed due to ' + status);
     }
   });
-
-  // var id = $panels[currentLeg];
-  //
-  // console.log(currentLeg);
-  // $panels.filter(':not([hidden])').attr('hidden', true);
-  // $(id).removeAttr('hidden');
 }
 
 function back(e) {
@@ -429,7 +441,7 @@ function back(e) {
     travelMode: 'WALKING'
   };
 
-  if (currentLeg > 1) {
+  if (currentLeg >= 1) {
     var removePolyline = polylines[currentLeg - 1];
     removePolyline.setMap(null);
     polylines.pop(removePolyline);
@@ -437,6 +449,9 @@ function back(e) {
 
   directionsService.route(request, function(response, status) {
     if (status === 'OK') {
+
+      nextStop.removeAttribute('hidden');
+      completeTrail.setAttribute('hidden', true);
 
       if (currentLeg < stops.length && currentLeg > 1) {
         var bounds = new google.maps.LatLngBounds();
@@ -455,13 +470,24 @@ function back(e) {
         console.log(currentLeg);
         var id = $panels[currentLeg];
 
-        console.log(currentLeg);
         $panels.filter(':not([hidden])').attr('hidden', true);
         $(id).removeAttr('hidden');
 
+        $instructionsContainer.innerHTML = '';
+        $instructionsContainer.appendChild(instructionsArray[currentLeg - 1]);
+
         map.fitBounds(bounds);
 
-        // console.log(polylines);
+      } else if (currentLeg == 1) {
+        $instructionsContainer.innerHTML = '';
+        currentLeg -= 1;
+
+        var id = $panels[currentLeg];
+
+        $panels.filter(':not([hidden])').attr('hidden', true);
+        $(id).removeAttr('hidden');
+
+        calculateRoute();
       }
 
 
@@ -469,10 +495,4 @@ function back(e) {
       window.alert('Directions request failed due to ' + status);
     }
   });
-
-  // var id = $panels[currentLeg];
-  //
-  // console.log(currentLeg);
-  // $panels.filter(':not([hidden])').attr('hidden', true);
-  // $(id).removeAttr('hidden');
 }
