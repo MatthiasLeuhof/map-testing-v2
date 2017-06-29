@@ -346,8 +346,6 @@ function calculateRoute() {
           }
         }
       }
-      console.log(markerArray);
-      console.log(instructionsArray);
 
       if (currentLeg == 0) {
         $instructionsSection.attr('hidden', true);
@@ -403,7 +401,6 @@ function forward(e) {
 
         var id = $panels[currentLeg];
 
-        console.log(currentLeg);
         $panels.filter(':not([hidden])').attr('hidden', true);
         $(id).removeAttr('hidden');
 
@@ -467,7 +464,6 @@ function back(e) {
         }
 
         currentLeg -= 1;
-        console.log(currentLeg);
         var id = $panels[currentLeg];
 
         $panels.filter(':not([hidden])').attr('hidden', true);
